@@ -1,0 +1,15 @@
+from pages.base_page import BasePage
+from playwright.sync_api import Page, expect
+
+class HomePage(BasePage):
+    def __init__(self, page: Page):
+        super().__init__(page)
+
+    def open_pizza_menu(self):
+        self.page.locator("a:has-text('Піца')").first.click()
+    
+    # def open_cart(self):
+    #     self.click(self.)
+    
+    # def open_login_form(self):
+    #     self.click(self.login_button)
