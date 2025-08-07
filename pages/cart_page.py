@@ -12,7 +12,7 @@ class CartPage(BasePage):
     def input_data_order(self, name, phone, email, address, comment):
         self.page.locator("input[name='name']").fill(name)
         self.page.locator("input[name='phone']").fill(phone)
-        self.page.locator("input[name='email']").fill(email)
+        self.page.locator("input[name='email'][placeholder='Email (не обов’язково)']").fill(email)
         self.page.locator("input[name='address']").fill(address)
         self.page.locator("textarea[name='comment']").fill(comment)
     
