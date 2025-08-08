@@ -7,6 +7,9 @@ class HomePage(BasePage):
 
     def open_pizza_menu(self):
         self.page.locator("a:has-text('Піца')").first.click()
+
+    def open_sushi_menu(self):
+        self.page.locator("a:has-text('Суші')").first.click()
     
     # def open_cart(self):
     #     self.click(self.)

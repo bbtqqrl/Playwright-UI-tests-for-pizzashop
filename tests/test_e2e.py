@@ -2,7 +2,6 @@ from playwright.sync_api import Page, expect
 from pages.home_page import HomePage
 from pages.pizza_page import PizzaPage
 from pages.cart_page import CartPage
-
 def test_add_pizza_to_cart_without_all_data(page: Page):
     page.goto("https://pizza-if.com")
     home_page = HomePage(page)
