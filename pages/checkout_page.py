@@ -28,7 +28,3 @@ class CheckoutPage(BasePage):
         first_name = first_name.rsplit(" ", 1)[0]
         self.page.get_by_role("link", name=f"Remove {first_name} from cart").click()
     
-    def add_pizza_to_cart(self, pizza_name: str):
-        self.page.get_by_role("link", name=f"Add “{pizza_name}” to your cart").click()
-        self.page.locator("button.modal-close:has-text('Продовжити покупки')").click()
-    

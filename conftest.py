@@ -4,7 +4,7 @@ import pytest
 from playwright.sync_api import sync_playwright, Page
 from pages.home_page import HomePage
 from pages.pizza_page import PizzaPage
-from pages.cart_page import CartPage
+from pages.checkout_page import CheckoutPage
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 @pytest.fixture
@@ -22,5 +22,5 @@ def pizza_page(page: Page) -> PizzaPage:
     return PizzaPage(page)
 
 @pytest.fixture
-def cart_page(page: Page) -> CartPage:
-    return CartPage(page)
+def checkout_page(page: Page) -> CheckoutPage:
+    return CheckoutPage(page)
