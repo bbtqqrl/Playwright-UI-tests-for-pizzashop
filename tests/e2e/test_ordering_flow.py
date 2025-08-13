@@ -22,7 +22,7 @@ def test_ordering_without_items(page, home_page, pizza_page, checkout_page):
     home_page.open_pizza_menu()
     pizza_page.order_pizza("Піца Бомбей")
     checkout_page.delete_from_checkout("Піца Бомбей")
-    checkout_page.input_data_order('Max', '090', '', 'Kyiv', 'Test comment')
+    checkout_page.input_data_order('Max', '0951127692', '', 'Kyiv', 'Test comment')
     checkout_page.submit_order()
     checkout_page.submit_order()
     expect(page.locator("body")).to_contain_text("Не всі дані вказані")
