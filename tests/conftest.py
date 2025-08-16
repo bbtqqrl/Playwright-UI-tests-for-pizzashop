@@ -24,3 +24,8 @@ def pizza_page(page: Page) -> PizzaPage:
 @pytest.fixture
 def checkout_page(page: Page) -> CheckoutPage:
     return CheckoutPage(page)
+
+@pytest.fixture
+def cart_with_pizza(home_page, pizza_page):
+    home_page.open_pizza_menu()
+    pizza_page.order_pizza("Піца Бомбей")
