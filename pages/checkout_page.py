@@ -18,7 +18,7 @@ class CheckoutPage(BasePage):
     
     def get_summ(self):
         total = self.page.locator("#checkount_total").inner_text()
-        return total
+        return int(''.join(filter(str.isdigit, total)))
 
     def delete_from_checkout(self, name: str):
         self.page.get_by_role("link", name=f"Remove {name} from cart").click()
@@ -27,4 +27,9 @@ class CheckoutPage(BasePage):
         first_name = self.page.locator("div.cart-product__title").first.text_content()
         first_name = first_name.rsplit(" ", 1)[0]
         self.page.get_by_role("link", name=f"Remove {first_name} from cart").click()
+
+    def get_item_price(self, name: str):
+        price_text = self.page.locator(f"div.checkount__cart:has(div.cart-product__title:has-text('{name}')) span.price-cart-item").inner_text()
+        return int(''.join(filter(str.isdigit, price_text)))
     
+
