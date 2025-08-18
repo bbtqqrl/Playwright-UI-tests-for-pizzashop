@@ -1,9 +1,9 @@
 from playwright.sync_api import Page, expect
+import pytest
 
-
-
-def test_phone_validation(test_user, cart_with_pizza, page, checkout_page):
-    test_user["phone"] = "" 
+@pytest.mark.parametrize("missing_field", ["name", "phone", "address"])
+def test_checkout_validation(missing_field, test_user, cart_with_pizza, page, checkout_page):
+    test_user[missing_field] = "" 
     checkout_page.input_data_order(
         **test_user
     )

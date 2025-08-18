@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 def page(page: Page):  # playwright фікстура
     page.goto("https://pizza-if.com")
     yield page
-    # Тут можна додати cleanup (наприклад, очистку cookies)
+
 
 @pytest.fixture
 def home_page(page: Page) -> HomePage:

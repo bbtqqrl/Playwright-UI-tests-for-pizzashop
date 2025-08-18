@@ -16,10 +16,10 @@ class GoodsPage(BasePage):
         self.page.get_by_role("link", name=f"Add “{name}” to your cart").click()
         self.page.locator("button.modal-close:has-text('Продовжити покупки')").click()
     
-    def sort_goodss(self, sort_by: str):
+    def sort_goods(self, sort_by: str):
         self.page.locator(f"select.orderby").select_option(sort_by)
     
-    def get_goodss_prices(self) -> str:
+    def get_goods_prices(self) -> str:
         self.page.wait_for_selector("div.product-item__price")  
         prices = self.page.locator("div.product-item__price").all_inner_texts()
         prices = [int(''.join(filter(str.isdigit, price))) for price in prices]
