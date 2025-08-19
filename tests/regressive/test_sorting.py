@@ -7,3 +7,6 @@ def test_sorting_pizzas(page, home_page, goods_page):
     sort_prices = goods_page.get_pizzas_prices()
     assert sort_prices == sorted(sort_prices)
 
+def test_construnctor_pizza(page, home_page, constructorpage):
+    home_page.open_constructor_menu()
+    constructorpage.add_stuf("Extra cheese")

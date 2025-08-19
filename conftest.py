@@ -5,6 +5,7 @@ from playwright.sync_api import sync_playwright, Page
 from pages.home_page import HomePage
 from pages.goods_page import GoodsPage
 from pages.checkout_page import CheckoutPage
+from pages.constructor_pizza_page import ConstructorPage
 import time
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
@@ -25,6 +26,10 @@ def goods_page(page: Page) -> GoodsPage:
 @pytest.fixture
 def checkout_page(page: Page) -> CheckoutPage:
     return CheckoutPage(page)
+
+@pytest.fixture
+def constructor_page(page: Page) -> ConstructorPage:
+    return ConstructorPage(page)
 
 @pytest.fixture
 def cart_with_pizza(home_page, goods_page, pizza_name="Піца Бомбей"):
